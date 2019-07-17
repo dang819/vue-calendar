@@ -66,13 +66,11 @@ export default {
             let holidayName = null
             for(let holidays in this.holidaysData){
                 if (moment(this.holidaysData[holidays].date).format("MMM-DD") == moment(date, 'YYYY/MM/DD').format('MMM-DD')){
-                    console.log("date: ", moment(date, 'YYYY/MM/DD').format('MMM-DD-YYYY'))
                     isHoliday = true
                     holidayName =  this.holidaysData[holidays].name
                 }
             }
 
-            console.log(date, " - validated week: ", weekOfMonthValidated)
             return { 
                 day: moment(date, 'YYYY/MM/DD').date(),
                 month: moment(date, 'YYYY/MM/DD').month()+1,
